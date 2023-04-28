@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="./customSalut.js"></script>  -->
+    <script type="module"  src="./lib.js">
+            registerComponents();
+    </script> 
+    
+
+    <script>
+        function test() {
+            console.log('testing...');
+
+
+            const allControls = document.querySelectorAll('salutation-element'); 
+            
+
+            allControls.forEach(element => {  element.style.color = 'blue';    });
+            
+            // document.querySelector('salutation-element').style.color = 'blue';      
+        }
+
+        function test2(){
+            console.log('Test2...');
+
+            const allControls = document.querySelectorAll('salutation-element'); 
+
+            document.querySelector('salutation-element').setAttribute('username', 'Elliot!');
+            
+
+            allControls.forEach(element => {  
+                element.setAttribute("username", "No my friend!");
+                element.style.color = 'black';
+             });
+            
+        }
+
+    </script>
+</head>
+
+<style>
+    .myclass {
+        color: red;
+    }
+
+    .testCustoms {
+        background-color: blue;
+        color: yellow;
+    }
+
+</style>
+<body>
+  
+     <salutation-element class="testCustoms"  username="Daniel Berger"></salutation-element> 
+     <salutation-element class="testCustoms"  username="Jocelyne Bedard"></salutation-element> 
+     <salutation-element class="testCustoms"  username="Marie-Helene"></salutation-element> 
+  
+     <button onclick="test()">Test</button>
+     <button onclick="test2()">Test2</button>
+     
+</body>
+</html>
